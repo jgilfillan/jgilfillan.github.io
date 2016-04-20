@@ -1,7 +1,6 @@
-
 ---
 layout: post
-title: Connecting to a database without directly supplying the password to the script
+title: Using PowerShell and DPAPI to securely mask passwords in R scripts
 categories:
 - blog
 - r
