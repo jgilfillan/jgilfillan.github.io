@@ -36,8 +36,8 @@ R does not natively provide functionality to solve this problem.  A number of so
         # Check output and press any key to exit
         Write-Host "Press any key to continue..."
         $x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-3.  Execute the script above (right click > Run with PowerShell), provide a meaningful name for the password, and type in the password.  You can now verify that the password has been encrypted by checking the file in %USERPROFILE%/DPAPI/passwords/[PC NAME]/[PASSWORD IDENTIFIER.txt]
-4.  Now run the following code from within R (I have this function saved in an R script that I [source](https://stat.ethz.ch/R-manual/R-devel/library/base/html/source.html) at the start of each script.
+3.  Execute the script above (right click > Run with PowerShell), provide a meaningful name for the password, and type in the password.  You can now verify that the password has been encrypted by checking the file in *%USERPROFILE%/DPAPI/passwords/[PC NAME]/[PASSWORD IDENTIFIER.txt]*
+4.  Now run the following code from within R (I have this function saved in an R script that I [source](https://stat.ethz.ch/R-manual/R-devel/library/base/html/source.html) at the start of each script.  The function executes a PowerShell command to decrypt the password and returns the result to R.
 
         getEncryptedPassword <- function(credential_label, credential_path) {
           # if path not supplied, use %USER_PROFILE%\DPAPI\passwords\computername\credential_label.txt as default
