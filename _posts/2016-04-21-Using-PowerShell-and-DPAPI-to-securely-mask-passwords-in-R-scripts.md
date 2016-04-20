@@ -16,7 +16,7 @@ There are many use cases for passing a password into R without explicitly typing
 R does not natively provide functionality to solve this problem.  A number of solutions have been proposed, and I have used a number of them over the years, but none of them ever felt quite right.  Below I have detailed my solution which uses the Windows Data Protection API (DPAPI) and PowerShell.  It requires minimal set up and is easy to use.  It does, however, only work on Windows, but if that is your primary development environment I am sure you will like this solution.
 
 ## Features
-* Windows only (although the solution may be able to be adapted using [OSX Keychain](http://hints.macworld.com/article.php?story=20130722033452283).
+* Windows only (although the solution may be able to be adapted using [OSX Keychain](http://hints.macworld.com/article.php?story=20130722033452283)).
 * Uses the Windows Data Protection API and PowerShell
 * Passwords are stored in encrypted files that can only be decrypted on the same PC and with the same Windows credentials that encrypted the password.
 * Encrypted passwords are passed directly into connection strings at runtime
