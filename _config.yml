@@ -3,8 +3,3 @@ highlighter: pygments
 url: http://josh.gilfillan.space
 lsi: false
 exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
-# Comments
- comments:
-   provider: disqus
- disqus: 
-   short_name: wwwgilfillanspace
