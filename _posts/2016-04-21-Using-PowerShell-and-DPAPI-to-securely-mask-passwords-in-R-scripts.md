@@ -24,6 +24,7 @@ R does not natively provide functionality to solve this problem.  A number of so
 ## Procedure
 1.  Ensure you have [enabled PowerShell execution](http://stackoverflow.com/a/4038991/3827849 "Stack Overflow").
 2.  Save the following text into a file called EncryptPassword.ps1:
+
         # Create directory user profile if it doesn't already exist.
         $passwordDir = "$($env:USERPROFILE)\DPAPI\passwords\$($env:computername)"
         New-Item -ItemType Directory -Force -Path $passwordDir
@@ -37,6 +38,7 @@ R does not natively provide functionality to solve this problem.  A number of so
         $x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 3.  Execute the script above (right click > Run with PowerShell), provide a meaningful name for the password, and type in the password.  You can now verify that the password has been encrypted by checking the file in %USERPROFILE%/DPAPI/passwords/[PC NAME]/[PASSWORD IDENTIFIER.txt]
 4.  Now run the following code from within R (I have this function saved in an R script that I [source](https://stat.ethz.ch/R-manual/R-devel/library/base/html/source.html) at the start of each script.
+
         getEncryptedPassword <- function(credential_label, credential_path) {
           # if path not supplied, use %USER_PROFILE%\DPAPI\passwords\computername\credential_label.txt as default
           if (missing(credential_path)) {
@@ -48,12 +50,15 @@ R does not natively provide functionality to solve this problem.  A number of so
           return(system(command, intern=TRUE))
         }
 5.  Now when you need to supply a password in R, you can run the following command instead of hardcoding / prompting for the password:
+
         getEncryptedPassword("[PASSWORD IDENTIFIER]")
 
     For example, instead of running the ROracle command:
+
         dbConnect(driver, "MYUSER", "MY PASSWORD", dbname="MYDB")
 
     I can run this instead (the identifier I supplied in Step 3 is "MYUSER_MYDB":
+
         dbConnect(driver, "MYUSER", getEncryptedPassword("MYUSER_MYDB"), dbname="MYDB")
 6.  You can repeat Step 3 for as many passwords as are required, and simply call them with the correct identifier in Step 5.
 
