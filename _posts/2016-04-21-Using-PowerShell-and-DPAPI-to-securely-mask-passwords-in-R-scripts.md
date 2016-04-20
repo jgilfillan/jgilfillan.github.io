@@ -2,6 +2,7 @@
 layout: post
 title: Using PowerShell and DPAPI to securely mask passwords in R scripts
 disqus_id: 770a5f60-7040-4a86-a0a8-f342dcfdb852
+comments: true
 categories:
 - blog
 - r
