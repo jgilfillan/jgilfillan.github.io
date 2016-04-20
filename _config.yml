@@ -2,4 +2,5 @@
 highlighter: rouge
 url: http://josh.gilfillan.space
 lsi: false
+timezone: Australia/Brisbane
 exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
