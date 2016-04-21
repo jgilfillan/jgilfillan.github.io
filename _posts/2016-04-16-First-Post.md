@@ -3,7 +3,7 @@ layout: post
 title: First Post
 comments: true
 disqus_id: c4b3edd8-dec1-4993-95ea-98326e3f01a1
-categories:
+tags:
 - blog
 ---
 
