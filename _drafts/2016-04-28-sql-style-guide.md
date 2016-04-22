@@ -10,10 +10,11 @@ tags:
 
 ## Basic select layout
 
-```
+```sql
+-- inline comments should have a space between the second dash and the start of the comment
 select
-   a.col1
-  ,a.col2
+   a.col1    -- indent first select column by three spaces
+  ,a.col2    -- indent second select column by two spaces, and include comma at start of line
   ,a.col3
   ,b.col4
   ,sum(b.col5) as col5
@@ -26,9 +27,9 @@ left join table2 b      -- ANSI joins
 
 where 1=1               -- always use "where 1=1" to facilitate easier commenting/uncommenting of filters 
   and a.col3 = 'Condition 1'
-  and b.col4 != 'Condition 2'
+  and b.col4 != 'Condition 2'    -- use != rather than <>
 
-group by 
+group by
    a.col1
   ,a.col2
   ,a.col3
