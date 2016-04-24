@@ -16,27 +16,32 @@ tags:
 2. Use the **alien** package to convert convert and install the RPMs.
 
 ```
-alien -i oracle-instantclient11.2-basic-11.2.0.4.0-1.x86_64.rpm
-alien -i oracle-instantclient11.2-devel-11.2.0.4.0-1.x86_64.rpm
-alien -i oracle-instantclient11.2-sqlplus-11.2.0.4.0-1.x86_64.rpm
+sudo alien -i oracle-instantclient11.2-basic-11.2.0.4.0-1.x86_64.rpm
+sudo alien -i oracle-instantclient11.2-devel-11.2.0.4.0-1.x86_64.rpm
+sudo alien -i oracle-instantclient11.2-sqlplus-11.2.0.4.0-1.x86_64.rpm
 ```
 3. Set the Oracle environment variables.
 
-
 ```
 export ORACLE_HOME=/usr/lib/oracle/11.2/client64
-export LD_LIBRARY_PATH=/usr/lib/oracle/11.2/client64/lib:$LD_LIBRARY_PATH
 export PATH=$PATH:$ORACLE_HOME/bin
 export OCI_LIB=/usr/lib/oracle/11.2/client64/lib:$OCI_LIB
-
 ```
 
+The LD_LIBRARY_PATH needs special treatment:
 
+```
+echo "/usr/lib/oracle/11.2/client64/lib" | sudo tee /etc/ld.so.conf.d/oracle.conf
+sudo ldconfig -v
+```
 
+4. Install **libaio1**
 
-3. TNS_ADMIN
-4. Test client
+```
+sudo apt-get install libaio1
+```
 
-
+5. TNS_ADMIN
+6. Test client
 
 ---
