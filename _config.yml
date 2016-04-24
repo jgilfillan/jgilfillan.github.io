@@ -2,4 +2,5 @@
 highlighter: pygments
 url: http://josh.gilfillan.space
 lsi: false
+permalink: pretty
 exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
