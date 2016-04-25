@@ -38,6 +38,7 @@ tags:
         sudo apt-get install libaio1
 
 6. Test client
+
         sqlplus USER@SERVER
 
 That's it.  In a future post I will detail how to install ROracle in Ubuntu 16.04.
