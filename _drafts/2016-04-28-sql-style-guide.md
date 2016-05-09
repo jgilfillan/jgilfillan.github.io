@@ -11,6 +11,16 @@ tags:
 ## Prologue
 This guide is intended to promote a standard SQL coding style across the Strategic Information Services team at Griffith University.  It is guide, not canon.  Adapt as required.  I will also do this, and update this guide accordingly.
 
+## Header
+
+```
+/* *************************************************************************************************
+  Description:  
+  Author:  Your name
+  Create Date:  Date created
+************************************************************************************************* */
+```
+
 ## Basic select layout
 
 * Avoid `select *`
