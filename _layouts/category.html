@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<h1>Articles by tag: {{ page.tag }}</h1>
+<div>
+</div>
+ 
+<div id="home">
+  <h2><i class="fa fa-bookmark"></i> Blog Posts: {{ page.tag }}</h2>
+  <ul id="blog-posts" class="posts">
+    {% if site.tags[page.tag] %}
+        {% for post in site.tags[page.tag] %}
+            <li><span>{{ post.date | date_to_string }} &raquo;</span><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    {% else %}
+        <p>There are no posts for this tag.</p>
+    {% endif %}
+  </ul>
+</div>

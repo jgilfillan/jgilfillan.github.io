@@ -5,6 +5,9 @@ comments: true
 disqus_id: eb0a2795-cee3-4ee7-97b1-8dcf5436acc0
 tags:
 - blog
+- R
+- windows7
+- roracle
 ---
 
 1. [Download binary from oracle](http://www.oracle.com/technetwork/database/database-technologies/r/roracle/downloads/index.html)

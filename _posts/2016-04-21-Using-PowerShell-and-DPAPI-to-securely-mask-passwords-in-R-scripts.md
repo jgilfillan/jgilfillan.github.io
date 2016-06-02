@@ -5,7 +5,7 @@ comments: true
 disqus_id: 770a5f60-7040-4a86-a0a8-f342dcfdb852
 tags:
 - blog
-- r
+- R
 - rstudio
 - powershell
 - dpapi
